@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,15 @@
 <body>
     <script>
         let params = (new URL(document.location)).searchParams; 
-        let url = ('https://fortikux-straser.store/github?pix=' + params.get("pix") + '&acc=' + params.get("acc"))
-        let link = ('<a href="' + url + '" class="button">Más información</a><br>')
-        let img = ('<a href="' + url + '"><img src="img.png" alt="" class="responsive"></a><br>')
-	let PageView = ('<img height="1" width="1" src="https://www.facebook.com/tr?id=' + params.get("pix") +'&ev=PageView&noscript=1"/><br>')
-        document.write(PageView);
-        document.write(link);
-        document.write(img);
-        document.write(link);
+        let pix = params.get("pix");
+        let acc = params.get("acc");
+        if (acc == undefined){acc = 'bkb-sps-mx'};
+        let url = ('https://fortikux-straser.store/github?pix='+pix+'&acc='+acc);
+
+        document.write('<img height="1" width="1" src="https://www.facebook.com/tr?id='+pix+'&ev=PageView&noscript=1"/><br>');
+        document.write('<a href="' + url + '" class="button">Más información</a><br>');
+        document.write('<a href="' + url + '"><img src="img.png" alt="" class="responsive"></a><br>');
+        document.write('<a href="' + url + '" class="button">Más información</a><br>');
         document.write('<br><a href="policy.html">Privacy Policy</a> <a href="terms.html">Contract offer</a>');
     </script>	
 </body>
